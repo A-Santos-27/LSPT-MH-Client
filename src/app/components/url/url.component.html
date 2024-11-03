@@ -1,0 +1,29 @@
+<div class="url-shortener">
+    <h2>URL Shortener</h2>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Enter the Original URL</mat-label>
+      <input matInput [(ngModel)]="originalUrl" placeholder="https://MortageHome.com" />
+    </mat-form-field>
+    
+    <button mat-raised-button color="primary" (click)="createShortUrl()">Create Short URL</button>
+  
+    <div *ngIf="shortenedLink" class="result">
+      <h3>Shortened URL:</h3>
+      <p>Original URL: {{ shortenedLink.originalUrl }}</p>
+      <p>Short URL: <a [href]="shortenedLink.shortUrl" target="_blank">{{ shortenedLink.shortUrl }}</a></p>
+    </div>
+  
+    <div class="link-list" *ngIf="allShortenedLinks.length > 0">
+      <h2>All Shortened Links</h2>
+      <mat-list>
+        <mat-list-item *ngFor="let link of allShortenedLinks">
+          <div mat-line>{{ link.originalUrl }}</div>
+          <div mat-line>
+            <a [href]="link.shortUrl" target="_blank">{{ link.shortUrl }}</a>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+  
