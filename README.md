@@ -1,27 +1,74 @@
-# MhLspt
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
 
-## Development server
+# LSPT-MH-Client
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+A simple Angular client that allows users to create and view shortened URLs via the URL Shortener API. This application provides an intuitive user interface for shortening URLs and displaying previously shortened URLs stored in the backend.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- **Create Short URLs**: Users can input a long URL, and the application will interact with the URL Shortener API to generate a shortened URL.
+- **Display All Shortened URLs**: The application displays a list of all shortened URLs stored in the backend, allowing users to view and access previously shortened links.
+- **Material Design**: Built with Angular Material components for a clean, responsive UI.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Key Components
 
-## Running unit tests
+1. **URL Form**
+   - Users enter a long URL, which is then sent to the backend to create a shortened version.
+   - The form validates the input, ensuring the URL is not empty before submission.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. **Shortened URL Display**
+   - Once a URL is shortened, the result is displayed immediately, showing both the original and shortened URLs.
+   - A list of all shortened URLs is also displayed, allowing users to view previously created short URLs and access them via clickable links.
 
-## Running end-to-end tests
+3. **Service Integration**
+   - The client communicates with the backend URL Shortener API to create new short URLs and fetch existing ones.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Project Setup
 
-## Further help
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Navigate to the project directory and install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the application:
+   ```bash
+   ng serve
+   ```
+
+4. Access the application at `http://localhost:4200`.
+
+## API Endpoints
+
+- **Create Short URL**: Sends a POST request to `/api/URL/shorten` with the original URL to generate a shortened URL.
+- **Get All Shortened URLs**: Sends a GET request to `/api/URL/all` to retrieve all stored shortened URLs.
+
+## Key Considerations
+
+- **Error Handling**: If the API encounters issues (e.g., invalid URL input), the client displays error messages.
+- **Dependency Management**: Uses Angular 14 and RxJS 7.5 to manage reactive programming within the app.
+
+## Dependencies
+
+- **Angular**: Core framework for building the SPA.
+- **Angular Material**: Provides UI components with Material Design.
+- **RxJS**: Handles asynchronous requests and responses from the API.
+
+### `package.json`
+
+Key dependencies:
+- `@angular/core`: ^14.2.0
+- `@angular/material`: ^13.0.0
+- `rxjs`: ~7.5.0
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+```
+
+This `README.md` covers the essential details of the Angular client, explaining its functionality, setup, and key components in a concise manner. Let me know if there’s anything more you’d like to include!
